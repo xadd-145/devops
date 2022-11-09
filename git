@@ -1,0 +1,104 @@
+WHY GIT?
+It is a version control system. It keeps track of all the different versions of our project.
+No need to make large zip files of projects.
+
+USES:
+1.Easy file recovery, 
+2.Who introduced an issue & when,
+3.Rollback to previously working state.
+
+HISTORY OF VCS:
+	Local VCS 	-> 	Centralized VCS 	-> 	Distributed VCS
+     	 (Local pc)	           (Server with ur files)  	 (Server with full history/repo)
+
+FEATURES OF GIT:
+1.Clicks snapshot not differences. (.git folder has all history)
+2.Almost every operation is local. (do everything locally & then push in server)
+3.Git has integrity. (calculates checksum, so if on server & ur desktop is same then no changes by anyone in the file while downloading)
+4.Git generally only adds data. (changes always addup)
+
+[2]
+GIT CONFIG:
+To set user name: $ git config --global user.name "Aditi"
+To set user email: $ git config --global user.email "aditi145patil@gmail.com"
+To check all details: $ git config --list
+To check user name: $ git config user.name
+To check user email: $ git config user.email
+
+
+
+[3]
+3 STAGE ARCHITECTURE:
+
+Only files u want to change will go into staging area which u can commit later. 
+Working directory: As it looks in file explorer
+Staging Area: Set of files of which u want to take snapshot.
+Git directory: .git folder which is hidden, in which all files are stored in compressed form.
+
+To Commit thr r 2 ways:
+1.Working directory->Staging area->Commit into git directory
+2.Working directory->Commit into git directory
+
+METHOD 1:
+MAKE RANDOM FILES IN A FOLDER & OPEN GITBASH
+$  git status (gives fatal error as it is not a git repo)
+
+Initialise a repo
+$  git init (initialised folder to git repo)
+$  git status (now it works but can see untracked files)
+
+
+Add all files in staging area
+$ git add –a (selected all to be in staging area)
+$  git status (now it shows the stages)
+
+Commit
+$ git commit -m “Initial commit” (now all those files are commited with msg)
+$ git status (it says nothing to commit & everything is clean)
+
+Check commits
+$ git log (it shows our details-who, when,msg & hash)
+
+Modify a file & check status
+$ git status (it shows tht which file has been modified)
+
+Say u want to stage only 1 file thn,
+$ git add 1.txt
+$ git status
+$ git commit -m "Updated a file"
+
+$ git status
+
+METHOD 2:
+
+
+TO DELETE GIT REPO:- $ rm -rf .git
+Now check status, now it’s a regular directory.
+
+[5]
+CLONE:
+$ git clone https://github.com/tensorflow/tensorflow.git newfolder
+
+Syntax: Git clone link newfoldername
+$ cd newfoldername (go into the folder)
+$ git status
+$ git add –a (staging area)
+$ git commit -m “New update” (commit)
+$ git status
+
+[6]
+FILE STATUS LIFECYCLE:
+Untracked -> Unmodified -> Modified -> Staged(On commit, it goes back to unmodified)
+
+1.	$ git clone_ link folder_name
+2.	$ cd folder_name
+3.	$ git status
+4.	Do some changes in a file_name & $ git add file_name
+5.	$ git add file_name ( . for all files)
+6.	$ git status (staged)
+7.	$ git restore  --staged file_name (undo staging)
+8.	$ git restore file_name (to clean)
+9.	Skip 7,8 after staged state
+$ git commit -m “My first commit” (commit in local)
+10.	$ git remote -v
+11.	$ git push origin main (or master)
