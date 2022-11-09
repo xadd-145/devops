@@ -113,4 +113,9 @@ Switch to master branch:- $ git branch -m master
 Rename branch name:- $ git branch -m old_branch_name new_branch_name
 Merge branch with master:- $ git merge  branch_name
 
+GIT CLEAN
+git clean -n: to dry run.
+git clean -f: forcefully file deletion.
+git clean -f -x: delete .gitignore files
+git clean -f -d: delete the untracked directories.
 
