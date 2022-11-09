@@ -52,3 +52,9 @@ Step 4 - Run the Docker Container
 Run the following command to run the HTML container server:
 
 docker run -d -p 80:80 html-server-image:v1
+
+docker pull httpd 
+Go to docker desktop...image create Karo
+Run getting started wala line
+docker ps
+Open webpg
