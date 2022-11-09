@@ -102,3 +102,15 @@ Untracked -> Unmodified -> Modified -> Staged(On commit, it goes back to unmodif
 $ git commit -m “My first commit” (commit in local)
 10.	$ git remote -v
 11.	$ git push origin main (or master)
+
+GIT BRANCHING & MERGING 
+Create:- $ git branch  new_branch_name
+List all branches:- $ git branch
+Delete a branch locally:- $ git branch -d branch_name
+Delete branch frm GitHub:- $ git push origin -delete branch_name
+Switch branch:- $ git checkout branch_name
+Switch to master branch:- $ git branch -m master  
+Rename branch name:- $ git branch -m old_branch_name new_branch_name
+Merge branch with master:- $ git merge  branch_name
+
+
