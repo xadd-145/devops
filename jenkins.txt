@@ -1,0 +1,58 @@
+JENKINS 
+To open Jenkins, 
+go to director where war file is present 
+open cmd & type java -jar jenkins.war then 
+open localhost:8080
+
+BASICS:
+1.	Select New item. Choose freestyle project & ok. 
+2.	Go in Build & select Windows batch.
+3.	In command box write simple code.
+4.	echo “Hello.. This is my first Jenkins Demo: %date:%time%”
+5.	Click apply & save.
+6.	Select Build now. 
+7.	In console output, you can see output of first Jenkins job with time & date.
+
+USING HELLO.JS FILE:
+1.	Write a java program in ur desktop.
+public class hellostudent{
+public static void main(String[] args)
+{
+for(int i=1;i<=15;i++)
+{
+System.out.println("Hi TE Student "+i);
+}
+}
+}
+2.	In general, click custom workspace & paste the path & give file_name
+3.	In Build, select Window batch:
+javac hellostudent.java
+Java hellostudent 
+Apply & save it
+4.	Select build now & in output console we can view output.
+
+JENKINS PIPELINE
+1.	Select New item & click pipeline.
+2.	Write this in command area:
+pipeline {
+    agent any
+    stages {
+        stage ('Build') {
+            steps {
+                echo 'Build stage Done'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Test stage Done'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploy stage Done'
+            }
+        }
+    }
+}
+3.	Run & see output.
+
